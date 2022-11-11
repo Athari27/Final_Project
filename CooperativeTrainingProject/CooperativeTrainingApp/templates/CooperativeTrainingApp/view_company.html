@@ -1,0 +1,38 @@
+{% extends 'CooperativeTrainingApp/base.html' %}
+
+{% block title %} Company {% endblock %}
+
+
+
+
+{% block content %}
+
+<h1>Copmany list </h1>
+
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">information</th>
+            <th scope="col">training</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            {% for p in New %}
+            <tr>
+                <td scope="row">{{ p.name_company }}</td>
+                <td>{{ p.information }}</td>
+                <td>{{ p.training }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

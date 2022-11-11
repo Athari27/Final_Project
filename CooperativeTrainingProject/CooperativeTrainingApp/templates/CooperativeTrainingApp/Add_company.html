@@ -1,0 +1,37 @@
+{% extends "CooperativeTrainingApp/base.html" %}
+
+{% block title %} Add Company {% endblock %}
+
+
+{% block content %}
+         
+          
+<h1>Add New Company</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label  class="form-label">Name The Company</label>
+        <input type="text"  class="form-control" name="name_company">
+    </div>
+
+    <div class="mb-3">
+        <label  class="form-label" >Information</label>
+        <textarea type="text" class="form-control" name="information" ></textarea>
+    </div>
+
+   
+    <div class="mb-3">
+    <label class="form-label">Training </label><br>
+    <input type="radio" id="true" name="training" value="True">
+    <label for="true">Vailable</label><br>
+    <input type="radio" id="false" name="training" value="False">
+    <label for="false">unVailable</label><br><br><br>
+    </div>
+
+
+    <input class="btn btn-primary" type="submit" value="Send" />
+</form> 
+
+
+{% endblock %}
