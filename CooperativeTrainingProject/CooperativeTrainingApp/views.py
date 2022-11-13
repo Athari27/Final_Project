@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
-from .models import Company
+from .models import AddCompany 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
@@ -39,10 +39,10 @@ def login_user(request : HttpRequest):
 
 
 
-def AddCompany(request : HttpRequest):
+def Company(request : HttpRequest):
 
     if request.method == "POST":
-        new_company = Company(name_company=request.POST["name_company"], information = request.POST["information"], training=request.POST["training"])
+        new_company = AddCompany(name_company=request.POST["name_company"], information = request.POST["information"], training=request.POST["training"], training_period=request.POST["training_period"])
         new_company.save()
 
     
@@ -51,7 +51,7 @@ def AddCompany(request : HttpRequest):
  
 def ViewCompany(request : HttpRequest):
 
-    New = Company.objects.all()
+    New = AddCompany.objects.all()
 
     return render(request, "CooperativeTrainingApp/view_company.html", {"New" : New})
 

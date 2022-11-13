@@ -16,7 +16,7 @@ urlpatterns = [
 
     #path("Profile/", views., name="Profile"),
 
-    path("AddCompany/", views.AddCompany, name="Add_Company"),
+    path("AddCompany/", views.Company, name="Add_Company"),
     path("Company/", views.ViewCompany, name="Company"),
 
     path("AboutSite/", views.AboutSite, name="About_Site"),
