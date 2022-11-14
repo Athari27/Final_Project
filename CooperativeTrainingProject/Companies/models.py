@@ -10,6 +10,7 @@ class AddCompany(models.Model):
        information = models.TextField()
        training = models.BooleanField()
        training_period = models.CharField(max_length=1024)
+       city = models.CharField(max_length=1024)
 
        
        

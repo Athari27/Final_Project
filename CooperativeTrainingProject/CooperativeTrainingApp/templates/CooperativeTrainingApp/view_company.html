@@ -7,7 +7,11 @@
 
 {% block content %}
 
-<h1>Copmany list </h1>
+<h1>Company list </h1>
+
+{% if "search"  in  request.GET %}
+    <h2> Search results for "{{ request.GET.search }}": </h2>
+{% endif %}
 
 
 
@@ -19,16 +23,20 @@
             <th scope="col">information</th>
             <th scope="col">training</th>
             <th scope="col">training period</th>
+            <th scope="col">city</th>
             
         </tr>
         </thead>
         <tbody>
             {% for p in New %}
             <tr>
-                <td scope="row">{{ p.name_company }}</td>
+                <td scope="row">{{ p.user.first_name }}</td>
+                
+                
                 <td>{{ p.information }}</td>
                 <td>{{ p.training }}</td>
                 <td>{{ p.training_period }}</td>
+                <td>{{ p.city }}</td>
             </tr>
             {% endfor %}
 

@@ -14,7 +14,10 @@ def Company(request : HttpRequest):
     
 
     if request.method == "POST":
-        new_company = AddCompany(user = request.user, information = request.POST["information"], training=request.POST["training"], training_period=request.POST["training_period"])
+         #create new company
+        new_user = User.objects.create_user(username=request.POST["username"],first_name=request.POST["first_name"],password=request.POST["password"])
+
+        new_company = AddCompany(user = new_user, information = request.POST["information"], training=request.POST["training"], training_period=request.POST["training_period"],city=request.POST["city"])
         new_company.save()
         print(new_company)
 
@@ -32,8 +35,14 @@ def LoginCompany(request : HttpRequest):
 
         if user:
             login(request, user)
-            return redirect("Companies:Home")
+            return redirect("CooperativeTrainingApp:Home")
         else:
             msg = "User Not Found , check your credentials"
 
-    return render(request, "Companies/login.html", {"msg" : msg})      
+    return render(request, "Companies/login.html", {"msg" : msg})   
+
+
+
+
+
+   

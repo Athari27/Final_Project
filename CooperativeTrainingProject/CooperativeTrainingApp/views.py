@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 from Companies.models import AddCompany
 from accounts.models import Profile
+from django.contrib.auth.models import User
+
 
 
 
@@ -21,9 +23,15 @@ def Home(request : HttpRequest):
 
 def ViewCompany(request : HttpRequest):
 
-    New = AddCompany.objects.all()
+     if "search" in request.GET:
+        New = AddCompany.objects.filter(title__contains=request.GET["search"])
+     else:
+        New = AddCompany.objects.all()
 
-    return render(request, "CooperativeTrainingApp/view_company.html", {"New" : New}) 
+
+     #New = AddCompany.objects.all()
+
+     return render(request, "CooperativeTrainingApp/view_company.html", {"New" : New}) 
 
 
 
@@ -35,9 +43,16 @@ def AboutSite(request : HttpRequest):
 
 
 
-def ViewProfile(request : HttpRequest):
+def ViewProfile(request : HttpRequest , user_id : int):
 
-    New = Profile.objects.all()
+    user = User.objects.get(id = user_id)
+  
+    
+    return render(request, "CooperativeTrainingApp/profil.html", {"user" : user}) 
 
-    return render(request, "CooperativeTrainingApp/profil.html", {"New" : New}) 
+
+
+def TechnicalSupport(request : HttpRequest):
+        
+    return render(request, "CooperativeTrainingApp/Support.html")    
 

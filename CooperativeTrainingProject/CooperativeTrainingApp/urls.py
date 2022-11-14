@@ -7,13 +7,15 @@ urlpatterns = [
     path("Home/", views.Home, name="Home"),
 
 
-    path("profile/", views.ViewProfile, name="Profile"),
+    path("profile/<user_id>", views.ViewProfile, name="Profile"),
 
    
     path("Company/", views.ViewCompany, name="Company"),
 
 
     path("AboutSite/", views.AboutSite, name="About_Site"),
+
+    path("Support/", views.TechnicalSupport, name="Support"),
     
    
 ]

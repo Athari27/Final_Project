@@ -6,32 +6,22 @@
 
 
 {% block content %}
-
-
- 
-<div class="container">
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">informations:</th>
-            
-            
-        </tr>
-        </thead>
-        <br><br><br>
-        <tbody>
-            {% for n in New %}
-            <tr>
-                <th scope="row">{{ n.gender }}</th>
-                <td>{{ n.university_name }}</td>
-                <td>{{ n.level_choices }}</td>
+            <h6>information</h6>
+         
+            <ul>
+                <li>{{ user.username }}</li>
+                <li>{{ user.email }}</li>
+                <li>{{ user.first_name }}</li>
+                <li>{{ user.last_name }}</li>
+                <li>{{ user.profile.gender }}</li>
+                <li>{{ user.profile.department }}</li>
+                <li>{{ user.profile.university_name }}</li>
+                <li>{{ user.profile.level }}</li>
                
-            </tr>
-            {% endfor %}
-
-        </tbody>
-    </table>
-</div>
+            </ul>
+          
+           
+    
     
       
 
