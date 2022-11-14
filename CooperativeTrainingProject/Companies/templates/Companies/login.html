@@ -1,6 +1,6 @@
 {% extends "CooperativeTrainingApp/base.html" %}
 
-{% block title %} Home {% endblock %}
+{% block title %} login for company {% endblock %}
     
   
 {% block content %}
@@ -166,7 +166,7 @@
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-			<form action="{% url 'accounts:login_user' %}" method="POST" class="login">
+			<form action="{% url 'Companies:login_company' %}" method="POST" class="login">
                             {% csrf_token %}
                             <strong class="">{{ msg }}</strong>
 				<div class="login__field">
@@ -182,10 +182,7 @@
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
 			</form>
-			<div class="social-login">
-				<a href="{% url 'accounts:Register_user' %}">register</a>
-				
-			</div>
+			
 		</div>
 		<div class="screen__background">
 			<span class="screen__background__shape screen__background__shape4"></span>

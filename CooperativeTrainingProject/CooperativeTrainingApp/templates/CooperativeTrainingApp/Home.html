@@ -7,17 +7,197 @@
 
 {% block content %}
 <style>
-    img { 
-	   height: 100%;
-       width: 100%;
-       margin-top: 5px;	   
-      } 
+    .responsive-banner {
+  display: inline-block;
+  margin: 50px;
+  width: 60%;
+  max-width: 490px;
+  min-width: 320px;
+  position: relative;
+  min-height: 300px;
+  max-height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+	background-image: linear-gradient(to bottom right, #F4C28E, #140f0f);
+	background-repeat: no-repeat;
+  text-align: left;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.responsive-banner.second {
+  background-image: linear-gradient(to bottom right, #F4C28E, #140f0f);
+}
+.responsive-banner.third {
+  background-image: linear-gradient(to bottom right, #589FE5, #74DAC4);
+}
+.container-envelope {
+  max-width: calc(100%);
+  padding: 15px;
+  color: #fff;
+   display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  min-height: 300px;
+  max-height: 450px;
+}
+.col-xs-12 {
+  -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  -webkit-align-self: flex-end;
+			-ms-flex-item-align: end;
+					align-self: flex-end;
+}
 
+@media (min-width: 650px) {
+  .col-xs-12 {
+    -webkit-align-self: center;
+      -ms-flex-item-align: center;
+      align-self: center;
+  }
+    .container-envelope {
+    max-width: calc(100% - 200px);
+  }
+}
+p {
+    clear: both;
+    font-family: 'Work Sans', Helvetica, sans-serif;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    font-weight: 500;
+    line-height: 1.15;
+    word-wrap: break-word;
+    margin: 1em 0 0.5em;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    position: relative;
+    word-wrap: break-word;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a.more-link {
+    background-color: rgba(255, 255, 255, 0.35);
+    display: inline-block;
+    padding: 12px 18px;
+    color: #fff;
+    text-decoration: none;
+    font: 500 15px 'Work Sans', Helvetica, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+    border: none !important;
+    position: relative;
+    border-radius: 30px;
+  text-transform: uppercase;
+    -webkit-transition: .1s all ease-in-out;
+    -moz-transition: .1s all ease-in-out;
+    -o-transition: .1s all ease-in-out;
+    transition: .1s all ease-in-out;
+}
+a.more-link:hover {
+  background-color: rgba(255, 255, 255, 0.50);
+}
+svg, img {
+  fill: rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+img {
+  max-width : 50%;
+}
+.cirle-a {
+  bottom: -80px;
+  left: -80px;
+}
+.cirle-b {
+  top: -30px;
+  right: 70%;
+}
+.cirle-c {
+  top: -330px;
+  right: -300px;
+}
+.cirle-d {
+  top: 195px;
+      right: 145px;
+}
+img {
+  top: 0;
+  right: 0;
+}
+
+body {
+ 
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+
+
+    
 </style>
 
-<body>
-    <img src="https://images.pexels.com/photos/7674645/pexels-photo-7674645.jpeg">
-</body>
+
+
+
+
+
+
+<aside class="responsive-banner first">
+  <div class="container-envelope">
+    <svg class="cirle-a" height="160" width="160">
+      <circle cx="80" cy="80" r="80"/>
+    </svg>
+     <svg class="cirle-b" height="60" width="60">
+      <circle cx="30" cy="30" r="30"/>
+    </svg>
+    <svg class="cirle-c" height="600" width="600">
+      <circle cx="300" cy="300" r="300"/>
+    </svg>
+   <svg class="cirle-d" height="60" width="60">
+      <circle cx="30" cy="30" r="30"/>
+    </svg>
+    <img src="https://i.pinimg.com/originals/f2/d1/f9/f2d1f900f688ddca0765ec8e2d3900e1.png" />
+    <div class="col-xs-12">
+      <p>Entry as a student</p>
+      <a target="_blank" href="/accounts/login/" class="more-link">Enter</a>
+    </div>
+  </div>
+</aside>
+
+<aside class="responsive-banner second">
+  <div class="container-envelope">
+    <svg class="cirle-a" height="160" width="160">
+      <circle cx="80" cy="80" r="80"/>
+    </svg>
+     <svg class="cirle-b" height="60" width="60">
+      <circle cx="30" cy="30" r="30"/>
+    </svg>
+    <svg class="cirle-c" height="600" width="600">
+      <circle cx="300" cy="300" r="300"/>
+    </svg>
+   <svg class="cirle-d" height="60" width="60">
+      <circle cx="30" cy="30" r="30"/>
+    </svg>
+    <img src="https://i.pinimg.com/originals/f2/d1/f9/f2d1f900f688ddca0765ec8e2d3900e1.png" />
+    <div class="col-xs-12">
+      <p>Entry as a company</p>
+      <a target="_blank" href="/companies/login" class="more-link">Enter</a>
+    </div>
+  </div>
+</aside>
+
+
+
+
+
 
 
 

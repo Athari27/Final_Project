@@ -7,23 +7,36 @@
 
 {% block content %}
 
-<h1>profile</h1>
 
+ 
 <div class="container">
-    
-    
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">informations:</th>
             
-            <ul>
-                <li scope="row">{{ New.user }}</li>
-                <li>{{ New.gender }}</li>
-                <li>{{ New.university_name }}</li>
-                <li>{{ New.department }}</li>
-                <li>{{ New.level_choices }}</li>
-            </ul>
-           
+            
+        </tr>
+        </thead>
+        <br><br><br>
+        <tbody>
+            {% for n in New %}
+            <tr>
+                <th scope="row">{{ n.gender }}</th>
+                <td>{{ n.university_name }}</td>
+                <td>{{ n.level_choices }}</td>
+               
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+    
+      
 
         
-</div>
+
 
 
 {% endblock %}

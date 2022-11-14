@@ -7,8 +7,6 @@ urlpatterns = [
    
         path("Register/", views.RegisterUser, name="Register_user"), 
 
-        
-
         path("login/", views.login_user, name="login_user"),
         
         path("Logout/", views.LogoutUser, name="logout_user"),

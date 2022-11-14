@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
-from .models import AddCompany
+from Companies.models import AddCompany
 from accounts.models import Profile
-from django.contrib.auth.models import User
+
 
 
 
@@ -16,17 +16,6 @@ def Home(request : HttpRequest):
     
 
 
-def Company(request : HttpRequest):
-    user : User = request.user
-    
-
-    if request.method == "POST":
-        new_company = AddCompany(user = request.user, information = request.POST["information"], training=request.POST["training"], training_period=request.POST["training_period"])
-        new_company.save()
-        print(new_company)
-
-    
-    return render(request, "CooperativeTrainingApp/Add_company.html", {"AddCompany" : AddCompany})
 
  
 
