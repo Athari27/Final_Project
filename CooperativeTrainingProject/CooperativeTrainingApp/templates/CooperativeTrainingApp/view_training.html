@@ -11,38 +11,45 @@
 
    h1 {
     margin-left: 100px;
+    margin-bottom: 3%;
    }
+
+   .box{ 
+    width: 50%;
+    margin-left: 20%;
+   }
+   h5{ 
+    color: rgb(26, 6, 6);
+    font-size: medium;
+   }
+   .btn{ 
+    color: rgb(242, 248, 248);
+    background-color: rgb(95, 77, 77);
+    background-color:hover #302f35;
+   }
+   .btn:hover {
+    background-color: #302f35;
+   }
+
+   
 
   </style>
 
 
-<h1>Training Opportunities </h1>
+ 
+<h1>Training Opportunities: </h1> 
 
-
-
-<div class="container">
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Company Name:</th>
-            <th scope="col">Training Title:</th>
-            <th scope="col">City:</th>
-            <th scope="col">Attach CV:</th>
-            
-        </tr>
-        </thead>
-        <tbody>
-            {% for i in train %}
-            <tr>
-                <td scope="row">{{ i.company_name }}</td>
-                <td>{{ i.training_title }}</td>
-                <td>{{ i.city }}</td> 
-                <td><a href="" class="btn btn-primary">submit application</a></td>
-            {% endfor %}
-                
-            </tr>
-        </tbody>
-    </table>
+<div class="card box">
+    {% for i in train %}
+    <div class="card-header">
+        Training opportunity from {{ i.company_name }} Company
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><b>Training Title: </b>{{ i.training_title }}</h5>
+      <h5 class="card-title"><b>City:  </b>{{ i.city }}</h5>
+      <a href="/Apply/" class="btn btn-primary" >submit application</a>
+    </div>
+    {% endfor %}
 </div>
 
 

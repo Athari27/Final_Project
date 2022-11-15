@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
-from Companies.models import AddCompany, Comment
+from Companies.models import AddCompany
 from accounts.models import Profile
-from .models import Training
+from .models import Training,JobApplication
 
 from django.contrib.auth.models import User
 
@@ -48,14 +48,23 @@ def TrainingAnnouncement(request : HttpRequest):
 
 
 
-def ViewTraining(request : HttpRequest):
 
-     
+def ViewTraining(request : HttpRequest):
 
     train2 = Training.objects.all()
 
-
     return render(request, "CooperativeTrainingApp/view_training.html", {"train" : train2}) 
+
+
+def Apply(request : HttpRequest):
+ 
+    if request.method == "POST":
+    
+        send = JobApplication( name = request.POST["name"], email=request.POST["email"], file=request.FILES["file"])
+        send.save()
+        
+    return render(request, "CooperativeTrainingApp/apply.html")
+
 
 
 
