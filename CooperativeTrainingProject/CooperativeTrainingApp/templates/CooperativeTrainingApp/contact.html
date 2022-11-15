@@ -1,0 +1,124 @@
+{% extends "CooperativeTrainingApp/base.html" %}
+
+{% block title %} Contact {% endblock %}
+
+
+{% block content %}
+  <style>
+label{
+  text-align: left;
+  margin-left: 200px;
+  
+}
+input,textarea {
+width: 50%;
+padding: 12px 20px;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-left: 200px;
+
+
+}
+
+input[type=submit] {
+width: 50%;
+background-color: #534a86;
+color: white;
+padding: 14px 20px;
+
+border: none;
+border-radius: 4px;
+cursor: pointer;
+margin-left: 200px;
+
+}
+
+input[type=submit]:hover {
+background-color: #1f0691;
+}
+
+
+h3{
+  margin-left: 200px;
+  margin-top: 30px;
+
+}
+
+
+.contact{
+ 
+ float:right;
+ 
+}
+
+.list-item {
+  line-height: 4;
+  color: rgb(29, 28, 28);
+  font-size: small;
+}
+
+.contact-text {
+  font: 300 18px 'Lato', sans-serif;
+  letter-spacing: 1.9px;
+  color: rgb(32, 31, 31);
+}
+
+.contact-text a {
+  color: rgb(39, 38, 38);
+  text-decoration: none;
+  transition-duration: 0.2s;
+  font-size:small;
+}
+
+.contact-text a:hover {
+  color: rgb(90, 78, 117);
+  text-decoration: none;
+}
+</style>
+
+
+
+<div class="container-envelope">
+<h3>Contact Us::</h3>
+
+<form action="">
+
+<label for="name"> Name:</label>
+<input type="text" id="name" name=" " >
+
+<label for="mail">Email:</label>
+<input type="text" id="mail" name=" " >
+
+<label for="msg">Message:</label>
+<textarea type="text" id="message" name=" " ></textarea><br><br><br>
+
+<input type="submit" value="Send">
+
+</form>
+
+
+
+  <ul class="contact">
+    
+    <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="#" title="Give me a call">(212) 555-2368</a></span></i></li>
+    
+    <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:AthariAlharbiA@hotmail.com" title="Send me an email">AthariAlharbiA@hotmail.com</a></span></i></li>
+    
+  </ul>
+ 
+
+
+</div>
+
+
+ 
+
+
+
+      
+    
+  
+
+{% endblock %}

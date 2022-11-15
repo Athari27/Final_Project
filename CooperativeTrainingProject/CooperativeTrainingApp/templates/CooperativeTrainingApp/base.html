@@ -15,16 +15,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
+      body{
+        background-color: #f5edec;
+      }
       .head {
         width: 100%;
         height: 60px;
-        background: #504b4b;
+        background: #726b6b;
         opacity: 1;
-        font-family: 'Encode Sans Condensed', sans-serif;
-        font-weight: 600;
         letter-spacing: .03em;
-        color: #212121;
-        margin-bottom: 40px;  }
+          }
                   
      .menu {
         position: absolute;
@@ -93,22 +93,17 @@
     
      /*for logo */
       #info-content {
-         height: 60px;
-         width: 110px;
+         height: 75px;
+         width: 100px;
          position: absolute;
          top:0%;
          right:0%;  }
      
-
-      .material-symbols-outlined {
-                         
-         max-width:fit-content;}
-          
  
 
       .acount {
-         height: 30px;
-         width: 110px;
+         height: 80px;
+         width: 100px;
          position: absolute;
          top:0%;
          right:5%;  } 
@@ -151,7 +146,7 @@
         <div class="dropdown-content">
           <ul>
             <li><a class="dropdown-item" href="{% url 'CooperativeTrainingApp:Profile' user.id%}">Profile</a></li>
-            <li><a class="dropdown-item" href="/accounts/Logout/">Log Out</a></li>
+            <li><a class="dropdown-item" href="/Logout/">Log Out</a></li>
            </ul> 
         </div>
       </div>
@@ -172,12 +167,15 @@
         <li>      
           <a href="/Company/">Company</a>
         </li>
+        <li>      
+          <a href="/Training/">Training</a>
+        </li>
        
         <li>      
-          <a href="/AboutSite/">Who are we</a>
+          <a href="/AboutUs/">About Us</a>
         </li>
         <li>      
-          <a href="/Support/">Technical Support</a>
+          <a href="/Contact/">Contact Us</a>
         </li>
       </ul>
     </div>
@@ -188,18 +186,7 @@
   {% endblock %}
 
 
-        <!--for footer -->
-  <footer class="w3-center w3-black w3-padding-30 w3-opacity ">
-      
-    <div class="w3-small w3-section">
-      <span class="material-symbols-outlined">
-        mail
-        </span>
-        <i class="fa-solid fa-user"><a href="Athari-Alharbi"><span>Linkedin</span></a></i>
-        <i class="fa-solid fa-mail"><a href="mailto:AthariAlharbiA@hotmail.com"><span>Email</span></a></i>
-    
-    </div>
-  </footer>
+
    
    
 

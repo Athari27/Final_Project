@@ -1,0 +1,73 @@
+{% extends "CooperativeTrainingApp/base.html" %}
+
+{% block title %} About Us {% endblock %}
+
+
+{% block content %}
+  <style>
+
+.box1 {
+  	height: 90vh;
+  	background-color: rgb(209, 191, 191);
+	  background-size: cover;
+  	background-position: top;
+  	position: relative;
+  	clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+    
+}
+
+.brand-box {
+    text-align: center;
+  	left: 40px;
+  
+}
+
+.brand { 
+  font-size: 30px; 
+  
+}
+
+.text-box {
+  	position: absolute;
+  	top: 30%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	text-align: center;
+    display:flex;
+  	font-size: 18px;
+  	color: black;
+    font-family:'Courier New', Courier, monospace;
+}
+
+
+
+
+
+   
+  </style>
+
+ <div class="box1">
+
+  <div class="brand-box">
+   <span class="brand">About Us:</span>
+  </div>
+ 
+  <div class="text-box">
+     <span>A cooperative training site is a site that targets university students who 
+      are expected to graduate to search for companies or entities to complete the
+       university requirements, which include field training, where the student undergoes 
+       training as if he is in a real job and acquires experiences and applies what he learns, 
+       so we offer options from companies in one place so that the student is allowed to search 
+       for the company And submits an application to join the training in it easily.</span>
+   
+   
+  </div>
+</div>
+
+ 
+   
+
+    
+  
+
+{% endblock %}

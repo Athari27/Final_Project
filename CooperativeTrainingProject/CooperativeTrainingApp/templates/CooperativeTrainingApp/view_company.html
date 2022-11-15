@@ -7,6 +7,22 @@
 
 {% block content %}
 
+  <style>
+   .search {
+    width: 50%;
+    margin-left: 100px;
+    margin-top: 50px;
+   }
+   h1 {
+    margin-left: 100px;
+   }
+
+  </style>
+
+  <form role="search" method="GET" action="{% url 'CooperativeTrainingApp:Company' %}">
+    <input class="form-control search " type="search" placeholder="Search" name="search" aria-label="Search">
+  </form>
+
 <h1>Company list </h1>
 
 {% if "search"  in  request.GET %}

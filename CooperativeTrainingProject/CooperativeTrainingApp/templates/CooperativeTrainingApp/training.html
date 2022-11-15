@@ -1,0 +1,75 @@
+{% extends "CooperativeTrainingApp/base.html" %}
+
+{% block title %} training {% endblock %}
+
+
+{% block content %}
+<style>
+    label{
+        text-align: left;
+        margin-left: 300px;
+    }
+    input[type=text], select {
+      width: 50%;
+      padding: 12px 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-left: 300px;
+      
+      
+    }
+    
+    input[type=submit] {
+      width: 50%;
+      background-color: #534a86;
+      color: white;
+      padding: 14px 20px;
+      
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 300px;
+
+    }
+    
+    input[type=submit]:hover {
+      background-color: #1f0691;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      
+    }
+    h3{
+        margin-left: 300px;
+        margin-top: 30px;
+
+    }
+    </style>
+
+  
+
+  <div class="container-envelope">
+    <h3>Publish a training opportunity:</h3>
+
+    <form action="">
+
+      <label for="name">Company Name:</label>
+      <input type="text" id="name" name="company_name" >
+  
+      <label for="title">Training Title:</label>
+      <input type="text" id="title" name="training_title" >
+  
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" ><br><br><br>
+
+      <input type="submit" value="Submit">
+
+    </form>
+  </div>
+  
+
+{% endblock %}

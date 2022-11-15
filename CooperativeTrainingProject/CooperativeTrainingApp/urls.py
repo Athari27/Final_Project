@@ -11,11 +11,12 @@ urlpatterns = [
 
    
     path("Company/", views.ViewCompany, name="Company"),
+    path("Training/", views.TrainingAnnouncement, name="Training"),
 
 
-    path("AboutSite/", views.AboutSite, name="About_Site"),
+    path("AboutUs/", views.AboutUs, name="About_us"),
 
-    path("Support/", views.TechnicalSupport, name="Support"),
+    path("Contact/", views.Contact, name="Contact"),
     
    
 ]

@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
-from Companies.models import AddCompany
+from Companies.models import AddCompany, Comment
 from accounts.models import Profile
+from .models import training
+
 from django.contrib.auth.models import User
-
-
-
 
 
 
@@ -17,14 +16,10 @@ def Home(request : HttpRequest):
     return render(request, "CooperativeTrainingApp/Home.html")
     
 
-
-
- 
-
 def ViewCompany(request : HttpRequest):
 
      if "search" in request.GET:
-        New = AddCompany.objects.filter(title__contains=request.GET["search"])
+        New = AddCompany.objects.filter(city__contains=request.GET["search"])
      else:
         New = AddCompany.objects.all()
 
@@ -35,11 +30,14 @@ def ViewCompany(request : HttpRequest):
 
 
 
-def AboutSite(request : HttpRequest):
+def TrainingAnnouncement(request : HttpRequest):
+
+    if request.method == "POST":
+    
+        train = training( company_name = request.POST["company_name"], training_title=request.POST["training_title"], city=request.POST["city"])
+        train.save()
         
-    return render(request, "CooperativeTrainingApp/AboutSite.html")
-
-
+    return render(request, "CooperativeTrainingApp/training.html")
 
 
 
@@ -52,7 +50,17 @@ def ViewProfile(request : HttpRequest , user_id : int):
 
 
 
-def TechnicalSupport(request : HttpRequest):
+
+
+
+def AboutUs(request : HttpRequest):
         
-    return render(request, "CooperativeTrainingApp/Support.html")    
+    return render(request, "CooperativeTrainingApp/AboutUs.html")
+
+    
+
+
+def Contact(request : HttpRequest):
+        
+    return render(request, "CooperativeTrainingApp/contact.html")    
 
