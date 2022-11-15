@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 from Companies.models import AddCompany, Comment
 from accounts.models import Profile
-from .models import training
+from .models import Training
 
 from django.contrib.auth.models import User
 
@@ -23,21 +23,42 @@ def ViewCompany(request : HttpRequest):
      else:
         New = AddCompany.objects.all()
 
+     return render(request, "CooperativeTrainingApp/view_company.html", {"New" : New})
 
-     #New = AddCompany.objects.all()
 
-     return render(request, "CooperativeTrainingApp/view_company.html", {"New" : New}) 
+
+
+
+
 
 
 
 def TrainingAnnouncement(request : HttpRequest):
+    user : User = request.user
+
+    if not (user.is_authenticated and user.has_perm("CooperativeTrainingApp.Training")):
+        return redirect("Companies:login_company")
 
     if request.method == "POST":
     
-        train = training( company_name = request.POST["company_name"], training_title=request.POST["training_title"], city=request.POST["city"])
-        train.save()
+        train1 = Training( company_name = request.POST["company_name"], training_title=request.POST["training_title"], city=request.POST["city"])
+        train1.save()
         
     return render(request, "CooperativeTrainingApp/training.html")
+
+
+
+def ViewTraining(request : HttpRequest):
+
+     
+
+    train2 = Training.objects.all()
+
+
+    return render(request, "CooperativeTrainingApp/view_training.html", {"train" : train2}) 
+
+
+
 
 
 

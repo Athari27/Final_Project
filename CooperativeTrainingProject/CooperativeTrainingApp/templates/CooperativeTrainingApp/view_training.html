@@ -1,0 +1,49 @@
+{% extends 'CooperativeTrainingApp/base.html' %}
+
+{% block title %} View Training {% endblock %}
+
+
+
+
+{% block content %}
+
+  <style>
+
+   h1 {
+    margin-left: 100px;
+   }
+
+  </style>
+
+
+<h1>Training Opportunities </h1>
+
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Company Name:</th>
+            <th scope="col">Training Title:</th>
+            <th scope="col">City:</th>
+            <th scope="col">Attach CV:</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            {% for i in train %}
+            <tr>
+                <td scope="row">{{ i.company_name }}</td>
+                <td>{{ i.training_title }}</td>
+                <td>{{ i.city }}</td> 
+                <td><a href="" class="btn btn-primary">submit application</a></td>
+            {% endfor %}
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
