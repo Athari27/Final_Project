@@ -25,18 +25,19 @@
 
 
  
-<h1>My requests: </h1> 
+  <h1>My requests: </h1> 
   <div class="box">
    
     {% for request in requests %}
+
     <ul>
       <li>{{ request.name }}</li>
       <li>{{ request.email }}</li>
-      <li>{{ request.file.url }}</li>
+      <li><a href="/media/media/file/CV_xpDBnWM.pdf">{{ request.file.url }}</a></li>
      
-     </ul>
+    </ul>
 
-     {% endfor %}
+    {% endfor %}
   </div>
 
 

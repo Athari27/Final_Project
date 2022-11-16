@@ -31,17 +31,18 @@ def ViewCompany(request : HttpRequest):
 #publication of training opportunities by companies
 def TrainingAnnouncement(request : HttpRequest):
     #to add a company, the user must be logged in as acompany
-    user : User = request.user
+    #user : User = request.user
 
-    if not (user.is_authenticated and user.has_perm("CooperativeTrainingApp.Training")):
-        return redirect("Companies:login_company")
+    #if not (user.is_authenticated and user.has_perm("CooperativeTrainingApp.Training")):
+        #return redirect("Companies:login_company") 
+    
 
     if request.method == "POST":
     
         train1 = Training( company_name = request.POST["company_name"], training_title=request.POST["training_title"], city=request.POST["city"])
         train1.save()
         
-    return render(request, "CooperativeTrainingApp/training.html")
+    return render(request, "CooperativeTrainingApp/training.html",{"Training" : Training})
 
 
 
@@ -81,7 +82,6 @@ def my_requests(request : HttpRequest):
 def ViewProfile(request : HttpRequest , user_id : int):
 
     user = User.objects.get(id = user_id)
-  
     
     return render(request, "CooperativeTrainingApp/profil.html", {"user" : user}) 
 
