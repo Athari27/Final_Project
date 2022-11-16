@@ -1,0 +1,45 @@
+{% extends 'CooperativeTrainingApp/base.html' %}
+
+{% block title %} My requests {% endblock %}
+
+
+
+
+{% block content %}
+
+  <style>
+
+   h1 {
+    margin-left: 100px;
+    margin-bottom: 3%;
+   }
+
+   .box{ 
+    width: 50%;
+    margin-left: 20%;
+    background-color: aliceblue;
+   }
+  
+
+  </style>
+
+
+ 
+<h1>My requests: </h1> 
+  <div class="box">
+   
+    {% for request in requests %}
+    <ul>
+      <li>{{ request.name }}</li>
+      <li>{{ request.email }}</li>
+      <li>{{ request.file.url }}</li>
+     
+     </ul>
+
+     {% endfor %}
+  </div>
+
+
+
+
+{% endblock %}

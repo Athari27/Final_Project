@@ -7,10 +7,9 @@ urlpatterns = [
 
     path("AddCompany/", views.Company, name="Add_Company"),
 
-    
     path("login/", views.LoginCompany, name="login_company"),
         
-    #path("Logout/", views.LogoutUser, name="logout_company"),
+    path("Logout/", views.LogoutCompany, name="logout_company"),
 
 
 ]

@@ -21,12 +21,15 @@
       .head {
         width: 100%;
         height: 80px;
-        background: #726b6b;
+        
+        background-color: beige;
+        border-style: ridge;
+        border-top: #666;
         opacity: 1;
         text-align: center;
         padding-top: 5px;
         padding-bottom: 5px;
-        color: #fff;
+        color: rgb(5, 5, 5);
         word-spacing: 0.1cm;
         font-family:'Work Sans', Helvetica, sans-serif;
         font-weight: 500;
@@ -87,7 +90,7 @@
     
      /*for logo */
       #info-content {
-         height: 75px;
+         height: 80px;
          width: 100px;
          position: absolute;
          top:0%;
@@ -97,11 +100,12 @@
  
 
       .acount {
-         height: 90px;
+         height: 100px;
          width: 100px;
+         margin-left: 90%;
          position: absolute;
          top:0%;
-         right:5%; 
+         right:7%; 
         } 
 
       .dropdown {
@@ -135,7 +139,7 @@
        <!--for logo -->
        <img src="{% static 'images/logo_transparent.png' %}" id="info-content">
        
-
+       
 
        <!--for ACOUNT -->
       <div class="dropdown acount">
@@ -143,11 +147,11 @@
         <div class="dropdown-content">
           <ul>
             <li><a class="dropdown-item" href="{% url 'CooperativeTrainingApp:Profile' user.id%}">Profile</a></li>
-            <li><a class="dropdown-item" href="/Logout/">Log Out</a></li>
+            <li><a class="dropdown-item" href="/accounts/Logout/">Log Out</a></li>
            </ul> 
         </div>
       </div>
-     
+       
     
     
    
@@ -169,6 +173,9 @@
         </li>
         <li>      
           <a href="/ViewTraining/">View training</a>
+        </li>
+        <li>      
+          <a href="/MyRequests/">My requests</a>
         </li>
         <li>      
           <a href="/AboutUs/">About Us</a>

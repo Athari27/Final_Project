@@ -26,7 +26,7 @@ def RegisterUser(request : HttpRequest):
 
 
 
-def login_user(request : HttpRequest):
+def LoginUser(request : HttpRequest):
     msg = ""
     if request.method == "POST":
         user = authenticate(request, username=request.POST["username"], password=request.POST["password"])
@@ -42,10 +42,9 @@ def login_user(request : HttpRequest):
  
 
 
-
-
 def LogoutUser(request: HttpRequest):
 
     logout(request)
 
-    return redirect("CooperativeTrainingApp:Home")      
+    return render(request, "CooperativeTrainingApp/Home.html")
+    

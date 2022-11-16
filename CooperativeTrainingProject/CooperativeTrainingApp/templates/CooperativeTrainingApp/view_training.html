@@ -47,7 +47,7 @@
     <div class="card-body">
       <h5 class="card-title"><b>Training Title: </b>{{ i.training_title }}</h5>
       <h5 class="card-title"><b>City:  </b>{{ i.city }}</h5>
-      <a href="/Apply/" class="btn btn-primary" >submit application</a>
+      <a href="/Apply/{{i.id}}/" class="btn btn-primary" >submit application</a>
     </div>
     {% endfor %}
 </div>

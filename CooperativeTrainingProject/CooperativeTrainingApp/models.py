@@ -9,6 +9,13 @@ class Training(models.Model):
     city =  models.CharField(max_length=1024)
 
 
+class Contact(models.Model):
+    name = models.CharField(max_length=1024)
+    email = models.CharField(max_length=1024)
+    message = models.TextField()
+
+    def __str__(self) -> str:
+        return f"{self.name}"
 
 
 class JobApplication(models.Model):
@@ -18,6 +25,9 @@ class JobApplication(models.Model):
     name = models.CharField(max_length=1024)
     email = models.CharField(max_length=1024)
     file = models.FileField(upload_to="media/file")
+
+    def __str__(self) -> str:
+        return f"{self.name}"
 
 
 

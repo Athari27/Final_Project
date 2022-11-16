@@ -42,6 +42,8 @@ def LoginCompany(request : HttpRequest):
     return render(request, "Companies/login.html", {"msg" : msg})   
 
 
+
+
 def LogoutCompany(request: HttpRequest):
 
     logout(request)
