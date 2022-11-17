@@ -1,9 +1,11 @@
 from django.db import models 
 from django.contrib.auth.models import User
+from Companies.models import AddCompany
 
 # Create your models here. 
 
 class Training(models.Model):
+    
     company_name = models.CharField(max_length=1024)
     training_title =  models.CharField(max_length=1024)
     city =  models.CharField(max_length=1024)

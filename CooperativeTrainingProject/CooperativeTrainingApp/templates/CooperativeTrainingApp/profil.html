@@ -6,26 +6,26 @@
 
 
 {% block content %}
-            <h1>Profile: </h1>
-         
-            <ul>
-                <li><b>User name:   </b>{{ user.username }}</li>
-                <li><b>Email:   </b>{{ user.email }}</li>
-                <li><b>First name:   </b>{{ user.first_name }}</li>
-                <li><b>Last name:   </b>{{ user.last_name }}</li>
-                <li><b>Gender:   </b>{{ user.profile.gender }}</li>
-                <li><b>Department:   </b>{{ user.profile.department }}</li>
-                <li><b>University name:   </b>{{ user.profile.university_name }}</li>
-                <li><b>Level:   </b>{{ user.profile.level }}</li>
-               
-            </ul>
-          
-           
-    
-    
-      
+  <style>
+     .profil {
+        width: 35rem;
+        margin-top: 4%;
+        margin-left: 20%;
+     }
 
-        
+  </style>
+
+  <div class="card  profil">
+    <div class="card-header">
+        <h1>Profile: </h1>
+    </div>
+    <ul class="list-group list-group-flush"><br>
+      <li class="list-group-item"><b>- User name:      </b>{{ user.username }}<b>      - Email:   </b>{{ user.email }}</li><br>
+      <li class="list-group-item"><b>- First name:     </b>{{ user.first_name }}<b>       - Last name:   </b>{{ user.last_name }}</li><br>
+      <li class="list-group-item"><b>- Gender:     </b>{{ user.profile.gender }}<b>          - Department:   </b>{{ user.profile.department }}</li><br>
+      <li class="list-group-item"><b>- University name:     </b>{{ user.profile.university_name }}<b>       - Level:   </b>{{ user.profile.level }}</li><br>
+    </ul>
+  </div>
 
 
 

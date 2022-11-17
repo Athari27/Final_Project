@@ -3,63 +3,62 @@
 {% block title %} Home {% endblock %}
 
 
-
-
 {% block content %}
 <style>
-    .responsive-banner {
-  display: inline-block;
-  margin: 50px;
-  margin-top: 10%;
-  width: 60%;
-  max-width: 490px;
-  min-width: 320px;
-  position: relative;
-  min-height: 300px;
-  max-height: 450px;
-  border-radius: 10px;
-  overflow: hidden;
-	background-image: linear-gradient(to bottom right, #52403c, #c79485);
-	background-repeat: no-repeat;
-  text-align: left;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-.responsive-banner.second {
-  background-image: linear-gradient(to bottom right, #52403c, #c79485);
-}
-.container-envelope {
-  max-width: calc(100%);
-  padding: 15px;
-  color: #fff;
-   display: -webkit-box;
+  .responsive-banner {
+    display: inline-block;
+    margin: 50px;
+    margin-top: 10%;
+    width: 60%;
+    max-width: 490px;
+    min-width: 320px;
+    position: relative;
+    min-height: 300px;
+    max-height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+	  background-image: linear-gradient(to bottom right, #585352, #ac7652);
+	  background-repeat: no-repeat;
+    text-align: left;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+  .responsive-banner.second {
+    background-image: linear-gradient(to bottom right, #52403c, #c79485);
+  }
+  .container-envelope {
+    max-width: calc(100%);
+    padding: 15px;
+    color: #fff;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-  min-height: 300px;
-  max-height: 450px;
-}
-.col-xs-12 {
-  -webkit-box-flex: 0;
+    min-height: 300px;
+    max-height: 450px;
+  }
+  .col-xs-12 {
+    -webkit-box-flex: 0;
     -webkit-flex: 0 0 100%;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
-  -webkit-align-self: flex-end;
-			-ms-flex-item-align: end;
-					align-self: flex-end;
-}
+   -webkit-align-self: flex-end;		
+   -ms-flex-item-align: end;
+	 align-self: flex-end;
+  }
 
 @media (min-width: 650px) {
   .col-xs-12 {
     -webkit-align-self: center;
-      -ms-flex-item-align: center;
-      align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
   }
     .container-envelope {
     max-width: calc(100% - 200px);
   }
 }
-p {
+  p {
     clear: both;
     font-family: 'Work Sans', Helvetica, sans-serif;
     text-transform: none;
@@ -75,13 +74,13 @@ p {
     word-wrap: break-word;
     font-size: 25px;
     margin-bottom: 20px;
-}
+  }
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-a.more-link {
+  a.more-link {
     background-color: rgba(255, 255, 255, 0.35);
     display: inline-block;
     padding: 12px 18px;
@@ -93,56 +92,49 @@ a.more-link {
     border: none !important;
     position: relative;
     border-radius: 30px;
-  text-transform: uppercase;
+    text-transform: uppercase;
     -webkit-transition: .1s all ease-in-out;
     -moz-transition: .1s all ease-in-out;
     -o-transition: .1s all ease-in-out;
     transition: .1s all ease-in-out;
-}
-a.more-link:hover {
-  background-color: rgba(255, 255, 255, 0.50);
-}
-svg, img {
-  fill: rgba(0, 0, 0, 0.1);
-  position: absolute;
-}
-img {
-  max-width : 50%;
-}
-.cirle-a {
-  bottom: -80px;
-  left: -80px;
-}
-.cirle-b {
-  top: -30px;
-  right: 70%;
-}
-.cirle-c {
-  top: -330px;
-  right: -300px;
-}
-.cirle-d {
-  top: 195px;
-      right: 145px;
-}
-img {
-  top: 0;
-  right: 0;
-}
+  }
+  a.more-link:hover {
+    background-color: rgba(255, 255, 255, 0.50);
+  }
+  svg, img {
+    fill: rgba(0, 0, 0, 0.1);
+    position: absolute;
+  }
+  img {
+    max-width : 50%;
+  }
+  .cirle-a {
+    bottom: -80px;
+    left: -80px;
+  }
+  .cirle-b {
+    top: -30px;
+    right: 70%;
+  }
+  .cirle-c {
+    top: -330px;
+    right: -300px;
+  }
+  .cirle-d {
+    top: 195px;
+    right: 145px;
+  }
+  img {
+    top: 0;
+    right: 0;
+  }
 
-body {
- 
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-
-
-    
+  body {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
 </style>
-
-
-
 
 
 
@@ -169,6 +161,8 @@ body {
   </div>
 </aside>
 
+
+
 <aside class="responsive-banner second">
   <div class="container-envelope">
     <svg class="cirle-a" height="160" width="160">
@@ -190,15 +184,6 @@ body {
     </div>
   </div>
 </aside>
-
-
-
-
-
-
-
-
-
 
 
 {% endblock %}
